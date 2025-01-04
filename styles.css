@@ -1,0 +1,174 @@
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #3b4f82, #49779c); /* Gradient background for added depth */
+    transition: background 0.5s ease-in-out; /* Smooth transition for background color changes */
+}
+
+/* Background Video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the whole screen */
+    z-index: -1; /* Places the video behind the content */
+}
+
+/* Title Styling */
+h1 {
+    font-size: 4.5em;
+    margin: 0;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ffdf00, #ff9b00, #ff6f61, #ff6f9e, #6bff8c); /* Light gradient colors */
+    background-size: 200% 100%; /* Ensures the gradient spans across the text */
+    background-position: left bottom;
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    color: transparent; /* Makes text transparent so gradient shows */
+    animation: colorChange 5s linear infinite; /* Apply continuous color change with smoother transition */
+}
+
+@keyframes colorChange {
+    0% {
+        background-position: 200% bottom;
+    }
+    100% {
+        background-position: -200% bottom;
+    }
+}
+
+/* Message Styling */
+p {
+    font-size: 1.6em;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: whitesmoke; /* Light text color for visibility */
+}
+
+/* Fireworks Canvas Styling */
+.fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(5px); /* Slight blur effect for fireworks */
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ffdf00;
+    color: #3b4f82;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #ffca00;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* More intense shadow on hover */
+}
+
+/* Scrollable Content */
+.scroll-container {
+    max-width: 80%;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Scrollbar Styling */
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ffdf00;
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Scroll Effect */
+.scroll-container {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(to bottom, #4b6cb7, #182848); /* Darker gradient for mobile */
+    }
+
+    h1 {
+        font-size: 3.5em; /* Smaller title font size on mobile */
+    }
+
+    p, .wish {
+        font-size: 1.4em; /* Smaller text size on mobile */
+    }
+
+    /* Adjust button size for mobile */
+    button {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+/* Additional Animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Creates a slight bounce effect */
+    }
+}
+
+/* Animated Hover for Button */
+button:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Floating Effect on Heading */
+
+/* Keyframe Animation for Floating Effect */
+@keyframes float {
+    0% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
